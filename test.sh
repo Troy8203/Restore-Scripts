@@ -21,7 +21,7 @@ import_config_extensions() {
     echo "Download complete."
 
     echo "Executing 'backup_extensions.sh' with '$file_import'..."
-    bash ./backup_extensions.sh "$file_import"
+    bash ./backup_extensions.sh "./backup/$file_import"
     echo "Execution complete."
 
     echo "Cleaning up '$file_import'..."
