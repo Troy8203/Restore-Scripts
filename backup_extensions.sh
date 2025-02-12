@@ -118,6 +118,8 @@ import_all_backups() {
     # Load list of extensions
     mapfile -t extensions < <(get_extensions)
 
+    show_extensions_backup $folder_backup
+
     # Display the stored extensions
     #import_backup "$file_import"
 
@@ -130,11 +132,10 @@ import_all_backups() {
 
 if [ "$#" -gt 0 ]; then
 
-    show_extensions_backup $1
     echo "Importing backup"
     echo "file: $1"
     # Call the import_all_backups function
-    import_all_backups $1
+    #import_all_backups $1
 else
     # Call the export_all_backups function
     export_all_backups
