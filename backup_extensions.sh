@@ -119,12 +119,12 @@ import_all_backups() {
     mapfile -t extensions < <(get_extensions)
 
     # Display the stored extensions
-    import_backup "$file_import"
+    #import_backup "$file_import"
 
-    for item in "${extensions[@]}"; do
-        import_file_backup "$item" "$folder_backup"
-    done
-    rm -rdf $folder_backup
+    #for item in "${extensions[@]}"; do
+        #import_file_backup "$item" "$folder_backup"
+    #done
+    #rm -rdf $folder_backup
 }
 
 
