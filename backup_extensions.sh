@@ -129,7 +129,10 @@ import_all_backups() {
 
 
 if [ "$#" -gt 0 ]; then
-    show_extensions_backup $1
+
+    #show_extensions_backup $1
+    echo "Importing backup"
+    echo "file: $1"
     # Call the import_all_backups function
     import_all_backups $1
 else
