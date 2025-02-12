@@ -20,11 +20,11 @@ import_config_extensions() {
     echo "Download complete."
 
     echo "Executing 'backup_extensions.sh' with '$file_import'..."
-    bash backup_extensions.sh "$file_import"
+    bash ./backup_extensions.sh "$file_import"
     echo "Execution complete."
 
     echo "Cleaning up '$file_import'..."
-    rm -f *.sh
+    #rm -f backup_extensions.sh
 
     echo "Process completed successfully!"
 }
