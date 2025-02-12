@@ -121,21 +121,18 @@ import_all_backups() {
     show_extensions_backup $folder_backup
 
     # Display the stored extensions
-    #import_backup "$file_import"
+    import_backup "$file_import"
 
-    #for item in "${extensions[@]}"; do
-        #import_file_backup "$item" "$folder_backup"
-    #done
-    #rm -rdf $folder_backup
+    for item in "${extensions[@]}"; do
+        import_file_backup "$item" "$folder_backup"
+    done
+    rm -rdf $folder_backup
 }
 
 
 if [ "$#" -gt 0 ]; then
-
-    echo "Importing backup"
-    echo "file: $1"
     # Call the import_all_backups function
-    #import_all_backups $1
+    import_all_backups $1
 else
     # Call the export_all_backups function
     export_all_backups

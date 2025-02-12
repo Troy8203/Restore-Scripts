@@ -1,38 +1,30 @@
 #!/bin/bash
+set -e
 
 import_config_extensions() {
     local file_import=$1
 
     if [ -z "$file_import" ]; then
         echo "Error: No file name provided."
-        return 1
+        exit 1
     fi
 
     echo "Downloading 'backup_extensions.sh'..."
     curl -s -O https://raw.githubusercontent.com/Troy8203/Restore-Scripts/trash/test-remote-bash/backup_extensions.sh
-    if [ $? -ne 0 ]; then
-        echo "Error: Failed to download 'backup_extensions.sh'."
-        return 1
-    fi
+    echo "Download complete."
 
     chmod +x backup_extensions.sh
 
     echo "Downloading '$file_import'..."
     curl -s -L -o "$file_import" "https://raw.githubusercontent.com/Troy8203/Restore-Scripts/trash/test-remote-bash/backup/$file_import"
-    if [ $? -ne 0 ]; then
-        echo "Error: Failed to download '$file_import'."
-        return 1
-    fi
+    echo "Download complete."
 
     echo "Executing 'backup_extensions.sh' with '$file_import'..."
     bash backup_extensions.sh "$file_import"
-    if [ $? -ne 0 ]; then
-        echo "Error: Execution of 'backup_extensions.sh' failed."
-        return 1
-    fi
+    echo "Execution complete."
 
     echo "Cleaning up '$file_import'..."
-    rm -f "$file_import"
+    rm -f *.sh
 
     echo "Process completed successfully!"
 }
