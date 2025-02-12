@@ -8,11 +8,6 @@ import_config_extensions() {
         return 1
     fi
 
-    if [ ! -f "$file_import" ]; then
-        echo "Error: File '$file_import' does not exist locally."
-        return 1
-    fi
-
     echo "Downloading 'backup_extensions.sh'..."
     curl -s -O https://raw.githubusercontent.com/Troy8203/Restore-Scripts/trash/test-remote-bash/backup_extensions.sh
     if [ $? -ne 0 ]; then
