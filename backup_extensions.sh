@@ -28,7 +28,7 @@ show_extensions_backup() {
 
     echo "List of extensions in $folder_name:"
     for file in "$folder_name"/*; do
-        echo "- ${file##*/}"
+        echo "** ${file##*/}"
     done
 
     read -p "Press [Enter] key to continue..."
@@ -121,8 +121,6 @@ import_all_backups() {
     # Display the stored extensions
     import_backup "$file_import"
 
-    show_extensions_backup "$folder_backup"
-
     for item in "${extensions[@]}"; do
         import_file_backup "$item" "$folder_backup"
     done
@@ -131,6 +129,7 @@ import_all_backups() {
 
 
 if [ "$#" -gt 0 ]; then
+    show_extensions_backup $1
     # Call the import_all_backups function
     import_all_backups $1
 else

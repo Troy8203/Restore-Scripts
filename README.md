@@ -21,7 +21,8 @@ curl -s https://raw.githubusercontent.com/Troy8203/Restore-Scripts/refs/heads/ma
 ```
 Restore:
 ```sh
-curl -s https://raw.githubusercontent.com/Troy8203/Restore-Scripts/refs/heads/main/backup_extensions.sh | bash -s https://github.com/Troy8203/Restore-Scripts/raw/refs/heads/main/backup/backup_2025-02-12.tar.gz
+curl -L -o backup_2025-02-12.tar.gz https://github.com/Troy8203/Restore-Scripts/raw/main/backup/backup_2025-02-12.tar.gz && \
+curl -s https://raw.githubusercontent.com/Troy8203/Restore-Scripts/main/backup_extensions.sh backup_2025-02-12.tar.gz | bash
 ```
 
 ## Features
