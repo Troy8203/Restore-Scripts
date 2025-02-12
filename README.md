@@ -17,11 +17,11 @@ Restore from a backup:
 ### Run with `curl`
 Backup:
 ```sh
-curl -s https://your-repository-url/backup-extensions.sh | bash
+curl -s https://raw.githubusercontent.com/Troy8203/Restore-Scripts/refs/heads/main/backup_extensions.sh | bash
 ```
 Restore:
 ```sh
-curl -s https://your-repository-url/backup-extensions.sh | bash -s backup_YYYY-MM-DD.tar.gz
+curl -s https://raw.githubusercontent.com/Troy8203/Restore-Scripts/refs/heads/main/backup_extensions.sh | bash -s https://github.com/Troy8203/Restore-Scripts/raw/refs/heads/main/backup/backup_2025-02-12.tar.gz
 ```
 
 ## Features
