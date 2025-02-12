@@ -10,14 +10,14 @@ import_config_extensions() {
     fi
 
     echo "Downloading 'backup_extensions.sh'..."
-    curl -s -O https://raw.githubusercontent.com/Troy8203/Restore-Scripts/trash/test-remote-bash/backup_extensions.sh
+    curl -s -O https://raw.githubusercontent.com/Troy8203/Restore-Scripts/develop/backup_extensions.sh
     echo "Download complete."
 
     chmod +x backup_extensions.sh
 
     mkdir -p backup
     echo "Downloading '$file_import'..."
-    curl -s -L -o "./backup/$file_import" "https://raw.githubusercontent.com/Troy8203/Restore-Scripts/trash/test-remote-bash/backup/$file_import"
+    curl -s -L -o "./backup/$file_import" "https://raw.githubusercontent.com/Troy8203/Restore-Scripts/develop/backup/$file_import"
     echo "Download complete."
 
     echo "Executing 'backup_extensions.sh' with '$file_import'..."
@@ -25,7 +25,7 @@ import_config_extensions() {
     echo "Execution complete."
 
     echo "Cleaning up '$file_import'..."
-    #rm -f backup_extensions.sh
+    rm -f backup_extensions.sh
 
     echo "Process completed successfully!"
 }
