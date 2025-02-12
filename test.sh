@@ -16,7 +16,7 @@ import_config_extensions() {
     chmod +x backup_extensions.sh
 
     echo "Downloading '$file_import'..."
-    curl -s -L -o "$file_import" "https://raw.githubusercontent.com/Troy8203/Restore-Scripts/trash/test-remote-bash/backup/$file_import"
+    curl -s -L -o "./backup/$file_import" "https://raw.githubusercontent.com/Troy8203/Restore-Scripts/trash/test-remote-bash/backup/$file_import"
     echo "Download complete."
 
     echo "Executing 'backup_extensions.sh' with '$file_import'..."

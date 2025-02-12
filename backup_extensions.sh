@@ -118,8 +118,6 @@ import_all_backups() {
     # Load list of extensions
     mapfile -t extensions < <(get_extensions)
 
-    show_extensions_backup $folder_backup
-
     # Display the stored extensions
     import_backup "$file_import"
 
