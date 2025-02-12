@@ -121,6 +121,8 @@ import_all_backups() {
     # Display the stored extensions
     import_backup "$file_import"
 
+    show_extensions_backup "$folder_backup"
+
     for item in "${extensions[@]}"; do
         import_file_backup "$item" "$folder_backup"
     done
