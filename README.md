@@ -11,7 +11,7 @@ Backup all extensions:
 ```
 Restore from a backup:
 ```sh
-./backup-extensions.sh backup_YYYY-MM-DD.tar.gz
+./backup-extensions.sh ./backup/backup_YYYY-MM-DD.tar.gz
 ```
 
 ### Run with `curl`

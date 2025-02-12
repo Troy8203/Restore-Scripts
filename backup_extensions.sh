@@ -15,7 +15,7 @@ get_extensions() {
     done
 
     # Print the array elements so they can be captured by the caller
-    #printf "%s\n" "${extensions[@]}"
+    printf "%s\n" "${extensions[@]}"
 }
 
 # Show all extensions of a folder
@@ -32,6 +32,7 @@ show_extensions_backup() {
     done
 
     read -p "Press [Enter] key to continue..."
+    clear
 }
 
 # Function to create a backup file from an extension
@@ -73,6 +74,9 @@ export_backup() {
         echo "Error: Folder '$folder_name' does not exist."
         return 1
     fi
+    if [ ! -d "backup" ]; then
+        mkdir -p "backup"
+    fi
     tar -czvf "$backup_name" "$folder_name"
     echo "Backup created: $backup_name"
 }
@@ -89,10 +93,10 @@ import_backup() {
 # Function to export backups
 export_all_backups() {
     # Display the stored extensions
-    folder_backup="backup_$(date +%Y-%m-%d)"
+    folder_backup="./backup/backup_$(date +%Y-%m-%d)"
     # Load list of extensions
     mapfile -t extensions < <(get_extensions)
-
+    
     echo "List of extensions in /org/gnome/shell/extensions/:"
     for item in "${extensions[@]}"; do
         echo "- $item"
@@ -100,7 +104,7 @@ export_all_backups() {
     done
 
     export_backup "$folder_backup"
-    rm -rdf $folder_name
+    rm -rdf "$folder_backup"
 }
 
 import_all_backups() {
@@ -122,7 +126,7 @@ import_all_backups() {
     for item in "${extensions[@]}"; do
         import_file_backup "$item" "$folder_backup"
     done
-    rm -rdf $folder_name
+    rm -rdf $folder_backup
 }
 
 
