@@ -43,13 +43,13 @@ curl -s https://raw.githubusercontent.com/Troy8203/Restore-Scripts/develop/backu
 Restore a backup file hosted in the repository:
 
 ```sh
-curl -s https://raw.githubusercontent.com/Troy8203/Restore-Scripts/develop/test.sh | bash -s <file>
+curl -s https://raw.githubusercontent.com/Troy8203/Restore-Scripts/develop/download.sh | bash -s <file>
 ```
 
 Example:
 
 ```sh
-curl -s https://raw.githubusercontent.com/Troy8203/Restore-Scripts/develop/test.sh | bash -s backup_2025-02-12.tar.gz
+curl -s https://raw.githubusercontent.com/Troy8203/Restore-Scripts/develop/download.sh | bash -s backup_2025-02-12.tar.gz
 ```
 > Note: The file must already be uploaded to the repository.
 
